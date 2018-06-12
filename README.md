@@ -308,6 +308,7 @@ Note: The default behavior of a process receiving SIGUSR1 or SIGUSR2 is to termi
 ```
 docker kill --signal SIGUSR1 <container ID>
 ```
+
 ## Limitations
 Most docker commands and options work as expected. However, due to
 the fact that the target application runs inside a Qemu VM which itself runs
@@ -338,6 +339,12 @@ The following common options of `docker run` are supported:
 --ip                        --volume
 --link                      --volumes-from
 --mount                     --workdir
+```
+
+Using RunQ in a nested hypervisor environment (e.g in a VMware Fusion guest) requires a
+configuration switch in `daemon.json`:
+```
+--nestedvm
 ```
 
 ## Developing runq
