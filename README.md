@@ -341,11 +341,11 @@ The following common options of `docker run` are supported:
 --mount                     --workdir
 ```
 
-Using RunQ in a nested hypervisor environment (e.g in a VMware Fusion guest) requires a
-configuration switch in `daemon.json`:
-```
---nestedvm
-```
+### Nested VM
+A nested VM is a virtual machine that runs inside of a virtual machine. In plain KVM this feature is
+considered working but experimental, and some limitations apply. Using runq KVM guests inside guests of other
+hypervisors such as XEN, VMware or Virtual Box might not function as expected or might not work at all.
+To try out runq inside a Vmware Fusion guest the (experimental) configuration option `--nestedvm` exists.
 
 ## Developing runq
 For fast development cycles runq can be build on the host as follows:
